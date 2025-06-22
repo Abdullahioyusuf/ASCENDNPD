@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronUp } from 'lucide-react';
+import { Menu, X, TrendingUp } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,40 +19,35 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 relative">
-              {/* Circular compass-style logo */}
-              <div className="w-12 h-12 border-3 border-blue-600 rounded-full bg-white flex items-center justify-center relative">
-                {/* Compass arrow pointing up */}
-                <div className="relative">
-                  <ChevronUp className="w-8 h-8 text-blue-600 font-bold stroke-[3]" />
-                  {/* Small compass points */}
-                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-gray-800 rounded-full"></div>
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-gray-800 rounded-full"></div>
-                  <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-blue-600 rounded-full"></div>
-                </div>
+              {/* Professional ascending arrow logo */}
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center relative shadow-lg">
+                <TrendingUp className="w-7 h-7 text-white stroke-[2.5]" />
+                {/* Subtle accent dots */}
+                <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-60"></div>
+                <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-60"></div>
               </div>
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">ASCEND</h1>
-              <p className="text-xs text-blue-600">Nonprofit Development</p>
+              <p className="text-xs text-blue-600 font-medium">Nonprofit Development</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               About
             </button>
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Services
             </button>
-            <button onClick={() => scrollToSection('resources')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('resources')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Resources
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Contact
             </button>
           </nav>
@@ -60,9 +55,9 @@ const Header = () => {
           {/* CTA Button */}
           <button
             onClick={() => scrollToSection('contact')}
-            className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            className="hidden md:block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
           >
-            Book Free Call
+            Free 30-Min Call
           </button>
 
           {/* Mobile menu button */}
@@ -78,26 +73,26 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors text-left font-medium">
                 Home
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">
+              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors text-left font-medium">
                 About
               </button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">
+              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors text-left font-medium">
                 Services
               </button>
-              <button onClick={() => scrollToSection('resources')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">
+              <button onClick={() => scrollToSection('resources')} className="text-gray-700 hover:text-blue-600 transition-colors text-left font-medium">
                 Resources
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">
+              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors text-left font-medium">
                 Contact
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 text-center font-semibold"
               >
-                Book Free Call
+                Free 30-Min Call
               </button>
             </div>
           </div>
